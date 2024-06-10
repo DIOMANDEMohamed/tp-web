@@ -13,3 +13,6 @@ Route::get('/enattente', [TransactionController::class, 'tranenattente'])->name(
 Route::get('/retirer', [TransactionController::class, 'tranretirer'])->name('retirer.index');
 Route::get('/onhold', [TransactionController::class, 'tranonhold'])->name('onhold.index');
 Route::get('/formulaire',[TransactionController::class, 'tranformulaire'])->name('transaction.formulaire');
+Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions.index');
+Route::get('/transactions/delete/{id}', [TransactionController::class, 'delete'])->name('transactions.delete');
+Route::post('/transactions', [TransactionController::class, 'store'])->name('transactions.store');

@@ -499,6 +499,26 @@
                                         </div>
                                     </td>
                                 </tr>
+                                
+                                    @foreach ($transactions as $transaction)
+                                        <tr>
+                                            <td>{{ $transaction->id }}</td>
+                                            <td>{{ $transaction->commande }}</td>
+                                            <td>{{ $transaction->utilisateur }}</td>
+                                            <td>{{ $transaction->detail }}</td>
+                                            <td>{{ $transaction->par }}</td>
+                                            <td>{{ $transaction->montant }}</td>
+                                            <td>{{ $transaction->status }}</td>
+                                            <td>
+                                                <a href="#" class="btn btn-primary">Voir</a>
+                                                <a href="#" class="btn btn-secondary">Éditer</a>
+                                                
+                                                    <a href="{{ route('transaction.delete'), ['id' => $transaction->id]}}" class="btn btn-secondary">delete</a>
+                                                
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                
                             </tbody>
                         </table>
                     </div>
